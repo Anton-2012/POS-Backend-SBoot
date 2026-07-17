@@ -22,6 +22,7 @@ public class VentaController {
         return ventaService.registrarVenta(venta);
     }
 
+    //hola
     @PutMapping( "/{id}")
     public Venta desactivar(@PathVariable Long id){
         return ventaService.cancelarVenta(id);
