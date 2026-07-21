@@ -16,6 +16,10 @@ public class VentaController {
 
     @Autowired
     private VentaService ventaService;
+    @GetMapping
+    public List<Venta> listarVentas() {
+        return ventaService.listarVentas();
+    }
 
     @PostMapping
     public Venta crearVenta(@RequestBody Venta venta){

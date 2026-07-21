@@ -11,6 +11,8 @@ import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class VentaService {
 
@@ -25,6 +27,13 @@ public class VentaService {
 
     @Autowired
     private ProductoRepository productoRepository;
+
+
+    public List<Venta> listarVentas(){
+
+        return ventaRepository.findAll().stream().filter(e -> e.getActiva() != null && e.getActiva()).toList();
+
+    }
     @Transactional
     public Venta registrarVenta(Venta venta){
 
