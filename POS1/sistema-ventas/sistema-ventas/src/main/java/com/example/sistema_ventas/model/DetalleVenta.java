@@ -1,5 +1,7 @@
 package com.example.sistema_ventas.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -13,6 +15,7 @@ public class DetalleVenta {
     private Long idDetalle;
 
 
+    @JsonBackReference
     @ManyToOne
     @JoinColumn(name = "id_venta")
     private Venta venta;

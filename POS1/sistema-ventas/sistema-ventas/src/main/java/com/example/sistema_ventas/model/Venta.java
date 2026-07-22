@@ -1,5 +1,6 @@
 package com.example.sistema_ventas.model;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -29,6 +30,7 @@ public class Venta {
 
     private Double total;
 
+    @JsonManagedReference
     @OneToMany(mappedBy = "venta")
     private List<DetalleVenta> detalles;
 
